@@ -8,11 +8,15 @@ body {
   font-family: Lato, sans-serif;
   color: #1c1e21;
   line-height: 1.34;
-  background: #ecf3ff;
+  background: url(../asset/header-shadow.png) repeat-x;
 }
 
 html {
   font-size: 62.5%;
+}
+
+img {
+  max-width: 100%;
 }
 
 /* 
@@ -66,14 +70,35 @@ html {
   background: #f2f3f5;
 }
 
+.gray-bg {
+  background: url(../asset/header-shadow.png) repeat-x;
+}
+
+.col-1-4,
+.col-2-4 {
+  align-self: flex-start;
+}
+
 /* 
 =============================
   LAYOUT
 =============================
 */
 
+header {
+  position: relative;
+  z-index: 2;
+}
+
 header #nav {
-  background: #fff;
+  background: #ffffff;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+}
+
+.feed > .row {
+  padding-top: 6rem;
 }
 
 .container {
@@ -122,7 +147,7 @@ header #nav {
 }
 
 .nav__page-item:hover {
-  background: #f2f3f5;
+  background: rgba(0, 0, 0, 0.09);
 }
 
 .nav__page-item:first-of-type {
@@ -136,6 +161,7 @@ header #nav {
 }
 
 .nav__menu {
+  padding: 0.6rem 0.8rem;
   justify-content: flex-end;
 }
 
@@ -151,4 +177,192 @@ header #nav {
 
 .nav__menu-item:hover {
   background: rgba(0, 0, 0, 0.15);
+}
+
+/* MAIN */
+
+/* NAV Tree */
+.nav-tree {
+  margin-top: 1.6rem;
+}
+
+.nav-tree-upper {
+  width: 100%;
+}
+
+.nav-tree__layout-item {
+  width: 100%;
+  padding: 0 0.8rem;
+  cursor: pointer;
+}
+
+.nav-tree__layout-item__layout {
+  padding: 0 0.8rem;
+  border-radius: 6px;
+}
+
+.nav-tree__layout-item__layout:last-of-type {
+  margin-bottom: 0.8rem;
+}
+
+.nav-tree__layout-item__layout:hover {
+  background: rgba(0, 0, 0, 0.09);
+}
+
+.nav-tree__layout-item__layout-img {
+  max-width: 36px;
+  max-height: 36px;
+  margin: 0.4rem 0.6rem 0.4rem 0;
+  transform: scale(0.7777777);
+}
+
+.nav-tree__layout-item__layout-name {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.more {
+  background: rgba(0, 0, 0, 0.09);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e4e6eb;
+  border-radius: 50%;
+  margin-right: 0.8rem;
+  cursor: pointer;
+  width: 28px;
+  height: 28px;
+  transform: scale(1);
+}
+
+.nav-tree-lower {
+  width: 100%;
+}
+
+.nav-tree-lower__title-box {
+  border-top: 1px solid #ced0d4;
+  margin: 0 1.6rem;
+  padding-top: 0.8rem;
+  padding-bottom: 0.4rem;
+  justify-content: space-between;
+}
+
+.nav-tree-lower__title-box:hover .setting {
+  display: block;
+}
+
+.nav-tree-lower__title {
+  font-size: 2rem;
+  padding: 0.8rem 0;
+}
+
+.nav-tree-lower__title.nav-title {
+  font-size: 1.7rem;
+  color: #56676b;
+}
+
+.nav-tree-lower__title.setting {
+  display: none;
+  color: #1877f2;
+  padding: 0.8rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.nav-tree-lower__title.setting:hover {
+  background: rgba(0, 0, 0, 0.09);
+}
+
+/* NAV TREE RIGHT */
+
+.nav-tree__layout--right {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.nav-tree-lower__title.icon {
+  display: flex;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.nav-tree__title-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-right: 0.8rem;
+  cursor: pointer;
+  width: 28px;
+  height: 28px;
+}
+
+.nav-tree__title-icon:hover {
+  background: #e4e6eb;
+}
+
+.nav-tree .have-story {
+  border: 3px solid #1877f2;
+  border-radius: 50%;
+}
+
+.have-story img {
+  border: 2px solid #fff;
+}
+
+.active {
+  position: relative;
+}
+
+.active:before {
+  position: absolute;
+  border: 2px solid #fff;
+  border-radius: 9999px;
+  content: "";
+  display: block;
+  height: 12px;
+  width: 12px;
+  background: #31a24c;
+  right: 0;
+  bottom: -11%;
+}
+
+.nav-tree.contact .nav-tree__layout-item__layout-img img {
+  border-radius: 50%;
+}
+
+.nav-tree__layout-item__layout-img.lower i {
+  font-size: 1.7rem;
+  font-weight: 300;
+}
+
+.nav-tree__layout-item__layout-img.lower i::before {
+  display: block;
+  text-align: center;
+  margin-top: 6px;
+}
+
+/* FOOTER */
+.footer__box {
+  margin-top: 1.6rem;
+  margin-left: 0.8rem;
+  padding-left: 0.8rem;
+}
+
+.footer__box li {
+  color: #56676b;
+  list-style: disc;
+  margin: 0 1rem;
+}
+
+.footer__box li:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.footer__box li:first-of-type {
+  list-style-type: none;
 }
