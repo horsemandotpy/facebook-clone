@@ -104,6 +104,7 @@ header #nav {
 .container {
   max-width: 816px;
   margin: 0 auto;
+  flex: 1;
 }
 
 .col-1-4 {
@@ -114,6 +115,8 @@ header #nav {
   flex: 1;
   padding: 0 3.2rem;
   max-width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 /* Header */
@@ -135,6 +138,8 @@ header #nav {
 }
 
 .nav__page {
+  width: 100%;
+  justify-content: center;
   gap: 1rem;
 }
 
@@ -185,7 +190,7 @@ header #nav {
 .stories-container {
   padding-top: 1.6rem;
   max-width: 590px;
-  gap: 1rem; 
+  gap: 1rem;
   overflow: scroll;
   scrollbar-width: none;
 }
@@ -214,12 +219,40 @@ header #nav {
   border-radius: 8px;
 }
 
+.posting-box__text-editor {
+  flex: 1;
+}
+
+.posting-box__text-editor .input-bar {
+  width: 100%;
+  font-size: 1.7rem;
+}
+
 .posting-box__content {
   gap: 1rem;
 }
 
 .posting-box__options {
+  justify-content: space-between;
+}
+
+.posting-box__options-choice {
   justify-content: center;
+  gap: 1rem;
+  flex: 1;
+  padding: 0.5rem 1rem;
+}
+
+.posting-box__options-choice:hover {
+  background: rgba(0, 0, 0, 0.09);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.posting-box__options-choice-text {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #65676b;
 }
 
 .newsfeed-box {
@@ -228,9 +261,11 @@ header #nav {
   background: #fff;
 }
 
-/* NAV Tree */
+/* NAV Tree (5/9/2023 change nav tag to div) */
 .nav-tree {
   margin-top: 1.6rem;
+  position: fixed;
+  width: inherit;
 }
 
 .nav-tree-upper {
@@ -327,6 +362,8 @@ header #nav {
 
 .nav-tree.contact {
   margin-top: 0;
+  width: 100%;
+  position: fixed;
 }
 
 .nav-tree__layout--right {
