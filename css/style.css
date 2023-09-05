@@ -220,19 +220,61 @@ header #nav {
 }
 
 .story-slide > * {
+  position: relative;
   width: 140.625px;
   height: 250px;
-  background: url("https://place-puppy.com/140x250");
-  border-radius: 10px;
+  overflow: hidden;
 }
 
-.story-slide > *:hover {
-  background-size: scale(1.2);
+.stories-container-content > * {
+  position: absolute;
+  border-radius: 10px;
+  height: 100%;
+  width: 100%;
+  background: url("https://place-puppy.com/140x250");
+  background-position: center;
+  background-size: cover;
+  z-index: 0;
+  justify-content: space-between;
+}
+
+.stories-container-content:hover .stories-background {
+  cursor: pointer;
+  transform: scale(1.013);
+  transition: all 0.7s;
+}
+
+.stories-background:before {
+  content: "";
+  display: none;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 8px;
+  transition: all .7s;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.stories-container-content:hover .stories-background:before {
+  display: block;
+}
+
+.stories-container-content:hover > * > .stories-user__icon,
+.stories-container-content:hover > * > .stories-user__name {
+  transform: scale(1);
 }
 
 .stories-container-content {
+  position: relative;
   justify-content: space-between;
-  padding: 0.6rem 1rem;
+}
+
+.stories-user__icon,
+.stories-user__name {
+  z-index: 3;
+  padding: 1rem;
 }
 
 .stories-user__icon {
@@ -260,6 +302,31 @@ header #nav {
   border-radius: 8px;
 }
 
+.posting-box__user-icon {
+  position: relative;
+}
+
+.posting-box__user-icon img {
+  border-radius: 50%;
+}
+
+.posting-box__user-icon div:before {
+  content: "";
+  display: none;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+.posting-box__user-icon:hover div:before {
+  display: block;
+}
+
 .posting-box__text-editor {
   flex: 1;
 }
@@ -271,7 +338,7 @@ header #nav {
 
 .posting-box__content {
   gap: 1rem;
-  padding-bottom: .8rem;
+  padding-bottom: 0.8rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.09);
 }
 
@@ -323,13 +390,22 @@ header #nav {
   gap: 1rem;
 }
 
-.feed__user-img > img {
+.feed__user-img.posting-box__user-icon img {
+  border-radius: 5px;
+}
+
+.feed__user-img.posting-box__user-icon div:before {
   border-radius: 5px;
 }
 
 .feed__user-infor-big {
   font-size: 1.5rem;
   font-weight: 600;
+}
+
+.feed__user-infor-big:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 .feed__user-infor-small {
@@ -637,7 +713,7 @@ header #nav {
   list-style-type: none;
 }
 
-@media(max-width: 900px) {
+@media (max-width: 900px) {
   .nav-tree {
     display: none;
   }
@@ -650,22 +726,21 @@ header #nav {
   .col-1-4 {
     width: 50%;
   }
-
 }
 
-@media(max-width: 450px) {
- .posting-box__options-choice:last-of-type {
-   display: none;
- } 
- .feed-post-option-choice:last-of-type {
-   display: none;
- }
+@media (max-width: 450px) {
+  .posting-box__options-choice:last-of-type {
+    display: none;
+  }
+  .feed-post-option-choice:last-of-type {
+    display: none;
+  }
 
- .nav__search-item:last-of-type {
-   width: 30%;
- }
+  .nav__search-item:last-of-type {
+    width: 30%;
+  }
 
- .nav__search-item .input-bar {
-   width: 180%;
- }
+  .nav__search-item .input-bar {
+    width: 180%;
+  }
 }
