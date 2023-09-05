@@ -113,6 +113,7 @@ header #nav {
 .col-2-4 {
   flex: 1;
   padding: 0 3.2rem;
+  max-width: 100%;
 }
 
 /* Header */
@@ -180,6 +181,52 @@ header #nav {
 }
 
 /* MAIN */
+
+.stories-container {
+  padding-top: 1.6rem;
+  max-width: 590px;
+  gap: 1rem; 
+  overflow: scroll;
+  scrollbar-width: none;
+}
+
+.story-slide {
+  display: flex;
+  gap: 1rem;
+}
+
+.story-slide > * {
+  width: 140.625px;
+  height: 250px;
+  background: url("https://place-puppy.com/140x250");
+  border-radius: 10px;
+}
+
+.story-slide > *:hover {
+  background-size: scale(1.2);
+}
+
+.posting-box {
+  margin-top: 1.2rem;
+  padding: 1.2rem 1.6rem;
+  max-width: 590px;
+  background: #fff;
+  border-radius: 8px;
+}
+
+.posting-box__content {
+  gap: 1rem;
+}
+
+.posting-box__options {
+  justify-content: center;
+}
+
+.newsfeed-box {
+  margin-top: 1.6rem;
+  max-width: 590px;
+  background: #fff;
+}
 
 /* NAV Tree */
 .nav-tree {
@@ -278,6 +325,10 @@ header #nav {
 
 /* NAV TREE RIGHT */
 
+.nav-tree.contact {
+  margin-top: 0;
+}
+
 .nav-tree__layout--right {
   border-top: 0;
   padding-top: 0;
@@ -287,6 +338,10 @@ header #nav {
   display: flex;
   padding: 1rem;
   gap: 1rem;
+}
+
+.nav-tree.contact .icon {
+  padding: 0;
 }
 
 .nav-tree__title-icon {
