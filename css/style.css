@@ -185,6 +185,17 @@ header #nav {
   background: rgba(0, 0, 0, 0.15);
 }
 
+.box-shadow {
+  position: absolute;
+  bottom: -6px;
+  right: 0;
+  left: 0;
+  height: 7px;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAAOBAMAAAD3WtBsAAAAFVBMVEUAAAAAAAAAAAAAAAAAAAAAAAD29va1cB7UAAAAB3RSTlMCCwQHGBAaZf6MKAAAABpJREFUCNdjSGNIY3BhCGUQBEJjIFQCQigAACyJAjLNW4w5AAAAAElFTkSuQmCC);
+  background-repeat: repeat-x;
+  background-size: 1px 7px;
+}
+
 /* MAIN */
 
 .stories-container {
