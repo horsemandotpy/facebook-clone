@@ -8,7 +8,7 @@ body {
   font-family: Lato, sans-serif;
   color: #1c1e21;
   line-height: 1.34;
-  background: url(../asset/header-shadow.png) repeat-x;
+  background: url(../asset/header-shadow.png) repeat;
 }
 
 html {
@@ -50,6 +50,10 @@ img {
 .img-40 {
   height: 40px;
   width: 40px;
+}
+
+.img-40 > img {
+  border-radius: 50%;
 }
 
 .img-32 {
@@ -197,7 +201,11 @@ header #nav {
 }
 
 /* MAIN */
+#main {
+  max-width: 100%;
+}
 
+/* STORIES */
 .stories-container {
   padding-top: 1.6rem;
   max-width: 590px;
@@ -222,6 +230,28 @@ header #nav {
   background-size: scale(1.2);
 }
 
+.stories-container-content {
+  justify-content: space-between;
+  padding: 0.6rem 1rem;
+}
+
+.stories-user__icon {
+  border-radius: 50%;
+}
+
+.stories-user__icon > img {
+  border: 5px solid #1877f2;
+  border-radius: 50%;
+}
+
+.stories-user__icon,
+.stories-user__name {
+  font-size: 1.2rem;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* POSTING POST */
 .posting-box {
   margin-top: 1.2rem;
   padding: 1.2rem 1.6rem;
@@ -241,6 +271,8 @@ header #nav {
 
 .posting-box__content {
   gap: 1rem;
+  padding-bottom: .8rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.09);
 }
 
 .posting-box__options {
@@ -270,6 +302,141 @@ header #nav {
   margin-top: 1.6rem;
   max-width: 590px;
   background: #fff;
+}
+
+/* NEWFEED BOX */
+
+.newsfeed-box {
+  border-radius: 6px;
+}
+
+.newsfeed-box__feed-top {
+  padding: 1.2rem 1.6rem;
+  padding-bottom: 0;
+  margin-bottom: 1.2rem;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.newsfeed-box__feed-top-left,
+.newsfeed-box__feed-top-right {
+  gap: 1rem;
+}
+
+.feed__user-img > img {
+  border-radius: 5px;
+}
+
+.feed__user-infor-big {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.feed__user-infor-small {
+  font-size: 1.3rem;
+  font-weight: 300;
+  color: #56676b;
+}
+
+.feed-option,
+.feed-delete {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #56676b;
+}
+
+.feed-option:hover,
+.feed-delete:hover {
+  background: rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+.newsfeed-box__feed-main {
+  padding: 0.4rem 1.6rem;
+  width: 100%;
+  max-height: 625px;
+}
+
+.newsfeed-box__feed-main-content {
+  font-size: 1.5rem;
+}
+
+.newsfeed-box__feed-bottom {
+  width: 100%;
+  padding-bottom: 0.6rem;
+}
+
+.feed-post-infor {
+  justify-content: space-between;
+  margin: 0 1.2rem;
+  padding: 1rem 0;
+}
+
+.feed-post-infor span {
+  font-size: 1.5rem;
+  color: #56676b;
+}
+
+.feed-post-option__text {
+  font-size: 1.5rem;
+  color: #56676b;
+  font-weight: 600;
+  line-height: 1.3333;
+}
+
+.feed-post-infor span:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.feed-post-infor__reactions,
+.feed-post-infor__comment {
+  display: flex;
+  align-items: center;
+}
+
+.feed-post-infor__reactions > *:last-child,
+.feed-post-infor__comment > *:last-child {
+  margin-left: 0.6rem;
+}
+
+.feed-post-option {
+  justify-content: space-between;
+  margin: 0 1.2rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  margin: 0.5rem 1.2rem;
+  padding: 0.4rem 0;
+}
+
+.feed-post-option-choice {
+  gap: 0.6rem;
+  justify-content: center;
+  flex: 1;
+  padding: 0.5rem 1rem;
+}
+
+.feed-post-option-choice:hover {
+  background: rgba(0, 0, 0, 0.07);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.feed-post__text-bar {
+  padding: 0 1.6rem;
+  gap: 1rem;
+}
+
+.feed-post__text-bar__input {
+  flex: 1;
+}
+
+.feed-post__text-bar__input .input-bar {
+  width: 100%;
 }
 
 /* NAV Tree (5/9/2023 change nav tag to div) */
@@ -468,4 +635,37 @@ header #nav {
 
 .footer__box li:first-of-type {
   list-style-type: none;
+}
+
+@media(max-width: 900px) {
+  .nav-tree {
+    display: none;
+  }
+
+  .nav__page,
+  .container {
+    display: none;
+  }
+
+  .col-1-4 {
+    width: 50%;
+  }
+
+}
+
+@media(max-width: 450px) {
+ .posting-box__options-choice:last-of-type {
+   display: none;
+ } 
+ .feed-post-option-choice:last-of-type {
+   display: none;
+ }
+
+ .nav__search-item:last-of-type {
+   width: 30%;
+ }
+
+ .nav__search-item .input-bar {
+   width: 180%;
+ }
 }
