@@ -25,7 +25,7 @@ img {
 =============================
 */
 .flex-box {
-  display: flex;
+  Display: flex;
   align-items: center;
 }
 
@@ -343,6 +343,7 @@ header #nav {
 }
 
 .posting-box__options {
+  margin-top: .8rem;
   justify-content: space-between;
 }
 
